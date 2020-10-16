@@ -13,7 +13,7 @@
         integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
         crossorigin="anonymous"></script>
     <link rel='stylesheet' type='text/css' media='screen' href='css/bootstrap.min.css'>
-    <script src='js/bootstrap.min.js'></script>
+    <script src='js/bootstrap.bundle.min.js'></script>
 
 </head>
 
@@ -22,16 +22,98 @@
         <div class="row">
             <div class="col-11">
                 <br>
-                <div class="btn-group float-right">
-                    <button type="button" class="btn btn-secondary"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill-rule="evenodd" d="M12 2.5a5.5 5.5 0 00-3.096 10.047 9.005 9.005 0 00-5.9 8.18.75.75 0 001.5.045 7.5 7.5 0 0114.993 0 .75.75 0 101.499-.044 9.005 9.005 0 00-5.9-8.181A5.5 5.5 0 0012 2.5zM8 8a4 4 0 118 0 4 4 0 01-8 0z"></path></svg> Acesso</button>
-                    <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <span class="sr-only">Acesso</span>
-                    </button>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Login</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Registrar-se</a>
+                <!-- Button trigger modal -->
+                <button type="button" style="margin-left: 5px;" class="float-right btn btn-secondary"
+                    data-toggle="modal" data-target="#exampleModal">
+                    Login
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Faça seu Login!</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form action="processar_login.php" method="POST">
+                                    <div class="form-group">
+                                        <label for="exampleInputUsuario">Usuário</label>
+                                        <input type="text" class="form-control" id="exampleInputUsuario"
+                                            placeholder="Informe seu usuário">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputPassword1">Senha</label>
+                                        <input type="password" placeholder="Informe sua senha" class="form-control"
+                                            id="exampleInputPassword1">
+                                    </div>
+                                    <center><button type="submit" class="btn btn-dark">Fazer Login</button></center>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <!--<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save changes</button>-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Button trigger modal -->
+                <button type="button" class="float-right btn btn-outline-secondary" data-toggle="modal"
+                    data-target="#exampleModal1">
+                    Cadastro
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Cadastre-se</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form action="processar_login.php" method="POST">
+                                    <div class="form-group">
+                                        <label for="exampleInputNome">Nome</label>
+                                        <input type="text" class="form-control" id="exampleInputNome"
+                                            placeholder="Informe seu nome">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputSobrenome">Sobrenome</label>
+                                        <input type="text" class="form-control" id="exampleInputSobrenome"
+                                            placeholder="Informe seu sobrenome">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail">Email</label>
+                                        <input type="text" class="form-control" id="exampleInputEmail"
+                                            placeholder="Informe seu email">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputUsuario">Usuário</label>
+                                        <input type="text" class="form-control" id="exampleInputUsuario"
+                                            placeholder="Informe seu usuário">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputPassword1">Senha</label>
+                                        <input type="password" placeholder="Informe sua senha" class="form-control"
+                                            id="exampleInputPassword1">
+                                    </div>
+                                    <center><button type="submit" class="btn btn-dark">Cadastrar</button></center>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <!--<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save changes</button>-->
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -51,10 +133,26 @@
             <div class="form-row">
                 <label for="campoDePesquisa" class="col-12">Busca por objeto educacional</label>
                 <input type="text" class="form-control col-10 shadow-sm bg-white rounded" id="campoDePesquisa">
-                &nbsp <button type="submit" class="btn btn-outline-secondary col-1"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill-rule="evenodd" d="M14.53 15.59a8.25 8.25 0 111.06-1.06l5.69 5.69a.75.75 0 11-1.06 1.06l-5.69-5.69zM2.5 9.25a6.75 6.75 0 1111.74 4.547.746.746 0 00-.443.442A6.75 6.75 0 012.5 9.25z"></path></svg></button>
+                &nbsp <button type="submit" class="btn btn-outline-secondary col-1"><svg
+                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                        <path fill-rule="evenodd"
+                            d="M14.53 15.59a8.25 8.25 0 111.06-1.06l5.69 5.69a.75.75 0 11-1.06 1.06l-5.69-5.69zM2.5 9.25a6.75 6.75 0 1111.74 4.547.746.746 0 00-.443.442A6.75 6.75 0 012.5 9.25z">
+                        </path>
+                    </svg></button>
+                <br><select class="form-control col-2">
+                    <option>Ensino: </option>
+                    <option>Infantil </option>
+                    <option>Fundamental </option>
+                    <option>Médio </option>
+                </select> &nbsp;
+
+                <select class="form-control col-2">
+                    <option>Tipo de recurso: </option>
+                </select>
             </div>
         </form>
     </div>
+
 </body>
 
 </html>
